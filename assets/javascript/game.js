@@ -21,14 +21,17 @@ function randomizer() {
 function resetGame() {
     randomizer();
     attempt = 0;
+    $(".showTarget").text(target);
+    $(".showAttempt").text(attempt);
+    
 }
 
 //Generate a random number!
 resetGame();
-$(".showTarget").text(target);
-$(".showAttempt").text(attempt);
 
-// Gemstones are hooked to on.click function
+if (attempt < target) {
+
+    // Gemstones are hooked to on.click function
     $("#gem1").on("click", function() {
         console.log("You clicked a gem: " + gem1rando);
     //adding clicked gem number to "attempt"
@@ -58,20 +61,54 @@ $(".showAttempt").text(attempt);
         $(".showAttempt").text(attempt);
     })
 
-// if the added attempts is LESS THAN the target, then:
-    if (attempt <= target) {
+    
+} else {
 
-    //continue playing until attempts is EQUAL to target: 
-    // reset the game and add to wins
-        if (attempt === target) {
-        resetGame();
-        wins++;
-        }
-    //continue playing until attempts is GREATER THAN the target rese:
-    // reset the game and add to loss
-        if (attempt >= target) {
-            resetGame();
-            losses++;
-        }
+}
 
-    }
+
+
+// if (attempt == target) {
+//     console.log("You win!");
+//     resetGame();
+//     wins++;
+
+// } else if (attempt > target) {
+//     console.log("You lose!");
+//     resetGame();
+//     losses++;
+// }
+
+
+
+
+
+// if (attempt === target) {
+//     console.log("You win!")
+//     resetGame();
+//     wins++;
+
+// } else if (attempt >= target) {
+//     resetGame();
+//     losses++;
+// }
+
+
+
+// // if the added attempts is LESS THAN the target, then:
+//     if (attempt <= target) {
+
+//     //continue playing until attempts is EQUAL to target: 
+//     // reset the game and add to wins
+//         if (attempt === target) {
+//         resetGame();
+//         wins++;
+//         }
+//     //continue playing until attempts is GREATER THAN the target rese:
+//     // reset the game and add to loss
+//         if (attempt >= target) {
+//             resetGame();
+//             losses++;
+//         }
+//     }
+
