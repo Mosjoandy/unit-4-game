@@ -2,6 +2,7 @@
 <html>
     <head>
         <title>Gem Game</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
         <link rel="stylesheet" type="text/css" href="assets/css/style.css">
         <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
         
@@ -9,20 +10,60 @@
 
 <body>
 
-<img id="gem1" class="gem" src="assets/images/gem1.png" width=250px>
-<img id="gem2" class="gem" src="assets/images/gem2.png" width=250px>
-<img id="gem3" class="gem" src="assets/images/gem3.png" width=250px>
-<img id="gem4" class="gem" src="assets/images/gem4.png" width=250px>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="jumbotron jumbotron-fluid jumbo1">
+                <div class="container">
+                    <h1 class="display-4 text-center">The Crystal Miner</h1>
+                    <div class="text-center"><img class="img-responsive center-block rounded" src="assets/images/walkingminer.gif" width="350px"></div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-<p>Number to collect: <div class="showTarget"></div></p>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card" style="width: 18rem;">
+                <div class="card-body mx-auto">
+                    <h3 class="card-title1 mx-auto text-center">Gem Collection Target:</h3>
+                    <div class="text-center showTarget"></div>
+                <br>
+                    <h3 class="card-title1 mx-auto text-center">Gems Collected:</h3>
+                    <div class="text-center showAttempt"></div>
+                </div>
+            </div>
+        </div>
 
-<p>Number colelcted: <div class="showAttempt"></div></p>
+        <div class="col-md-6">
+            <div class="card" style="width: 18rem;">
+                <div class="card-body mx-auto">
+                    <h3 class="card-title mx-auto">Collect the Gems</h3>
+                    <img id="gem1" class="gem" src="assets/images/gem1.png" width=50px>
+                    <img id="gem2" class="gem" src="assets/images/gem2.png" width=50px>
+                    <img id="gem3" class="gem" src="assets/images/gem3.png" width=50px>
+                    <img id="gem4" class="gem" src="assets/images/gem4.png" width=50px>
+                </div>
+            </div>
+        </div>
+    </div>
 
-<p>Wins: <div class="showWins"></div></p>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="jumbotron jumbotron-fluid jumbo2">
+                <div class="container">
+                    <h1 class="h3 float-left">Successful Prospects: <span class="showWins"></span></h1>
+                    <h1 class="h3 float-right">Failed Prospects: <span class="showLosses"></span></h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
-<p>Losses: <div class="showLosses"></div></p>
-
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="assets/javascript/game.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="assets/javascript/game.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
 </body>
 </html>

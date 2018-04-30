@@ -1,0 +1,23 @@
+.jumbo1 {
+    padding-top: 20px;
+    padding-bottom: 30px;
+}
+
+.jumbo2 {
+    margin-top: 15px;
+    padding-top: 10px;
+    padding-bottom: 45px;
+}
+
+.card-title {
+    font-size: 30px;
+}
+
+.card-title1 {
+    font-size: 25px;
+}
+
+.showTarget, .showAttempt {
+    font-size: 30px;
+}
+
