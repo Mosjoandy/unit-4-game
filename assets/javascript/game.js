@@ -1,46 +1,48 @@
 var wins = 0;
-console.log(wins);
 var losses = 0;
 var target = Math.floor(Math.random() * 100) + 19;
 var attempt = 0;
 
-var gem1rando = Math.floor(Math.random() * 13) + 1;
-var gem2rando = Math.floor(Math.random() * 13) + 1;
-var gem3rando = Math.floor(Math.random() * 13) + 1;
-var gem4rando = Math.floor(Math.random() * 13) + 1;
+var gem1rando = Math.floor(Math.random() * 13) + 2;
+var gem2rando = Math.floor(Math.random() * 13) + 2;
+var gem3rando = Math.floor(Math.random() * 13) + 2;
+var gem4rando = Math.floor(Math.random() * 13) + 2;
 
-// Making a function to randomize the target and gems
-function randomizer() {
-    target = Math.floor(Math.random() * 100) + 19;
-    gem1rando = Math.floor(Math.random() * 13) + 1;
-    gem2rando = Math.floor(Math.random() * 13) + 1;
-    gem3rando = Math.floor(Math.random() * 13) + 1;
-    gem4rando = Math.floor(Math.random() * 13) + 1;
-}
 
-// Making a function that runs randomizer and sets attempt to 0
-function resetGame() {
-    randomizer();
-    attempt = 0;
-    $(".showTarget").text(target);
-    $(".showAttempt").text(attempt);
-    $(".showWins").text(wins);
-    $(".showLosses").text(losses);
-}
+// Functions
 
-// winning/losing function that increase wins/losses and replaces center image
-function youWin() {
-    wins++;
-    $(".placeholder").html("<img src='assets/images/youwin.gif' alt='winner' width='250px' height='185px' />");
-}
-function youLose() {
-    losses++;
-    $(".placeholder").html("<img src='assets/images/youlose.gif' alt='loser' width='250px' />");
-}
+    // Making a function to randomize the target and gems
+        function randomizer() {
+            target = Math.floor(Math.random() * 100) + 19;
+            gem1rando = Math.floor(Math.random() * 13) + 2;
+            gem2rando = Math.floor(Math.random() * 13) + 2;
+            gem3rando = Math.floor(Math.random() * 13) + 2;
+            gem4rando = Math.floor(Math.random() * 13) + 2;
+        }
+
+    // Making a function that runs randomizer and sets attempt to 0
+        function resetGame() {
+            randomizer();
+            attempt = 0;
+            $(".showTarget").text(target);
+            $(".showAttempt").text(attempt);
+            $(".showWins").text(wins);
+            $(".showLosses").text(losses);
+        }
+
+    // winning/losing function that increase wins/losses and replaces center image
+        function youWin() {
+            wins++;
+            $(".placeholder").html("<img src='assets/images/youwin.gif' alt='winner' width='250px' height='185px' />");
+        }
+
+        function youLose() {
+            losses++;
+            $(".placeholder").html("<img src='assets/images/youlose.gif' alt='loser' width='250px' />");
+        }
 
 //Generate a random number!
 resetGame();
-
 
 //replace initial instructions of game in .placeholder with a new image
 //when a gem on the right is clicked
