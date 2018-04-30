@@ -23,13 +23,12 @@ function resetGame() {
     attempt = 0;
     $(".showTarget").text(target);
     $(".showAttempt").text(attempt);
-    
+    $(".showWins").text(wins);
+    $(".showLosses").text(losses);
 }
 
 //Generate a random number!
 resetGame();
-
-if (attempt < target) {
 
     // Gemstones are hooked to on.click function
     $("#gem1").on("click", function() {
@@ -38,6 +37,21 @@ if (attempt < target) {
         attempt += gem1rando;
         console.log("Your total attempt: " + attempt);
         $(".showAttempt").text(attempt);
+        
+        // conditional if attempt is equal to target, increase wins
+        // update win counter on display, then reset game
+            if (attempt === target) {
+                wins++;
+                $(".showWins").text(wins);
+                resetGame();
+
+        // conditional if attempt is greater than the target, increase losses
+        // update losses counter on display, then reset game
+            } else if (attempt > target) {
+                losses++;
+                $(".showLosses").text(losses);
+                resetGame();
+            }
     })
 
     $("#gem2").on("click", function() {
@@ -45,6 +59,15 @@ if (attempt < target) {
         attempt += gem2rando;
         console.log("Your total attempt: " + attempt);
         $(".showAttempt").text(attempt);
+            if (attempt === target) {
+                wins++;
+                $(".showWins").text(wins);
+                resetGame();
+            } else if (attempt > target) {
+                losses++;
+                $(".showLosses").text(losses);
+                resetGame();
+            }
     })
 
     $("#gem3").on("click", function() {
@@ -52,6 +75,15 @@ if (attempt < target) {
         attempt += gem3rando;
         console.log("Your total attempt: " + attempt);
         $(".showAttempt").text(attempt);
+            if (attempt === target) {
+                wins++;
+                $(".showWins").text(wins);
+                resetGame();
+            } else if (attempt > target) {
+                losses++;
+                $(".showLosses").text(losses);
+                resetGame();
+            }
     })
 
     $("#gem4").on("click", function() {
@@ -59,56 +91,15 @@ if (attempt < target) {
         attempt += gem4rando;
         console.log("Your total attempt: " + attempt);
         $(".showAttempt").text(attempt);
+            if (attempt === target) {
+                wins++;
+                $(".showWins").text(wins);
+                resetGame();
+            } else if (attempt > target) {
+                losses++;
+                $(".showLosses").text(losses);
+                resetGame();
+            }
     })
 
-    
-} else {
-
-}
-
-
-
-// if (attempt == target) {
-//     console.log("You win!");
-//     resetGame();
-//     wins++;
-
-// } else if (attempt > target) {
-//     console.log("You lose!");
-//     resetGame();
-//     losses++;
-// }
-
-
-
-
-
-// if (attempt === target) {
-//     console.log("You win!")
-//     resetGame();
-//     wins++;
-
-// } else if (attempt >= target) {
-//     resetGame();
-//     losses++;
-// }
-
-
-
-// // if the added attempts is LESS THAN the target, then:
-//     if (attempt <= target) {
-
-//     //continue playing until attempts is EQUAL to target: 
-//     // reset the game and add to wins
-//         if (attempt === target) {
-//         resetGame();
-//         wins++;
-//         }
-//     //continue playing until attempts is GREATER THAN the target rese:
-//     // reset the game and add to loss
-//         if (attempt >= target) {
-//             resetGame();
-//             losses++;
-//         }
-//     }
 
