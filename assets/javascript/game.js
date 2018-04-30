@@ -103,3 +103,25 @@ resetGame();
     })
 
 
+//Make an on click function that will hook onto .placeholder
+$(".gem").on("click", function() {
+    //replace initial instructions of game in .placeholder with a new image
+    //when a gem on the right is clicked
+
+    //Replace that image with win image if user collects the exact amt of target
+
+    //replcae that image with lose image if user goes over the target
+    
+
+})
+
+
+
+
+
+
+
+
+
+
+// image for winning: https://media.giphy.com/media/ToMjGpyO2OVfPLpoxu8/giphy.gif
