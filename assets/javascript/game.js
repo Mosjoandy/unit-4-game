@@ -1,4 +1,5 @@
 var wins = 0;
+console.log(wins);
 var losses = 0;
 var target = Math.floor(Math.random() * 100) + 19;
 var attempt = 0;
@@ -27,8 +28,28 @@ function resetGame() {
     $(".showLosses").text(losses);
 }
 
+// winning/losing function that increase wins/losses and replaces center image
+function youWin() {
+    wins++;
+    $(".placeholder").html("<img src='assets/images/youwin.gif' alt='winner' width='250px' height='185px' />");
+}
+function youLose() {
+    losses++;
+    $(".placeholder").html("<img src='assets/images/youlose.gif' alt='loser' width='250px' />");
+}
+
 //Generate a random number!
 resetGame();
+
+
+//replace initial instructions of game in .placeholder with a new image
+//when a gem on the right is clicked
+$(".gem").on("click", function() {
+    console.log("change the image in center");
+    $(".placeholder").html("<img src='assets/images/workingminer.gif' alt='worker' width='250px' />");
+})
+
+// Game begins here!
 
     // Gemstones are hooked to on.click function
     $("#gem1").on("click", function() {
@@ -41,87 +62,66 @@ resetGame();
         // conditional if attempt is equal to target, increase wins
         // update win counter on display, then reset game
             if (attempt === target) {
-                wins++;
+                youWin();
                 $(".showWins").text(wins);
                 resetGame();
 
         // conditional if attempt is greater than the target, increase losses
         // update losses counter on display, then reset game
             } else if (attempt > target) {
-                losses++;
+                youLose();
                 $(".showLosses").text(losses);
                 resetGame();
             }
     })
-
+    
+    //cloned code above for gemstone2
     $("#gem2").on("click", function() {
         console.log("You clicked a gem: " + gem2rando);
         attempt += gem2rando;
         console.log("Your total attempt: " + attempt);
         $(".showAttempt").text(attempt);
             if (attempt === target) {
-                wins++;
+                youWin();
                 $(".showWins").text(wins);
                 resetGame();
             } else if (attempt > target) {
-                losses++;
+                youLose();
                 $(".showLosses").text(losses);
                 resetGame();
             }
     })
 
+    //cloned code above for gemstone3
     $("#gem3").on("click", function() {
         console.log("You clicked a gem: " + gem3rando);
         attempt += gem3rando;
         console.log("Your total attempt: " + attempt);
         $(".showAttempt").text(attempt);
             if (attempt === target) {
-                wins++;
+                youWin();
                 $(".showWins").text(wins);
                 resetGame();
             } else if (attempt > target) {
-                losses++;
+                youLose();
                 $(".showLosses").text(losses);
                 resetGame();
             }
     })
 
+    //cloned code above for gemstone4
     $("#gem4").on("click", function() {
         console.log("You clicked a gem: " + gem4rando);
         attempt += gem4rando;
         console.log("Your total attempt: " + attempt);
         $(".showAttempt").text(attempt);
             if (attempt === target) {
-                wins++;
+                youWin();
                 $(".showWins").text(wins);
                 resetGame();
             } else if (attempt > target) {
-                losses++;
+                youLose();
                 $(".showLosses").text(losses);
                 resetGame();
             }
     })
-
-
-//Make an on click function that will hook onto .placeholder
-$(".gem").on("click", function() {
-    //replace initial instructions of game in .placeholder with a new image
-    //when a gem on the right is clicked
-
-    //Replace that image with win image if user collects the exact amt of target
-
-    //replcae that image with lose image if user goes over the target
-    
-
-})
-
-
-
-
-
-
-
-
-
-
-// image for winning: https://media.giphy.com/media/ToMjGpyO2OVfPLpoxu8/giphy.gif
